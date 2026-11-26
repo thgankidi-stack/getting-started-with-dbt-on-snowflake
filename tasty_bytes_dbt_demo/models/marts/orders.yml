@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: orders
+    description: "One row per order line, enriched with order, truck, menu, location, and customer attributes."
+    columns:
+      - name: order_detail_id
+        description: "Identifier of the source order line. Each value should appear once in this mart."
+        tests:
+          - not_null
+          - unique
